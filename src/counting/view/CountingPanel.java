@@ -35,8 +35,8 @@ public class CountingPanel extends JPanel
 		super();
 		this.baseController = baseController;
 		this.baseLayout = new SpringLayout();
-		this.fibButton = new JButton("Fact");
-		this.factButton = new JButton("Fib");
+		this.fibButton = new JButton("fib");
+		this.factButton = new JButton("Fact");
 		this.textField = new JTextField(35);
 		this.textArea = new JTextArea(20, 40);
 		
@@ -52,7 +52,7 @@ public class CountingPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
-				
+				textArea.setText(baseController.transferFactorial(textField.getText()));
 			}
 		});
 		
@@ -60,7 +60,7 @@ public class CountingPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
-				
+				textArea.setText(baseController.transferFibonacci(textField.getText()));
 			}
 		});
 	}
