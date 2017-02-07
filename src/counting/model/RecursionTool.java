@@ -26,4 +26,16 @@ public class RecursionTool
 		}
 	}
 	
+	public int calculateIterationFac(int currentNumber)
+	{
+		int x = 0, y = 1, z = 1;
+		for (int i = 0; i < currentNumber; i++)
+		{
+			x = y;
+            y = z;
+            z = x + y;
+		}
+		return x;
+	}
+	
 }

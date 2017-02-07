@@ -26,7 +26,7 @@ public class CountingController
 
 	public String transferFactorial(String input)
 	{
-		String factorialInfo = "The factorial of " + input + " is ";
+		String factorialInfo = "The iteration of " + input + " is ";
 		
 		mathTimer.startTimer();
 		
@@ -59,6 +59,25 @@ public class CountingController
 		
 		
 		return fibanocciInfo;
+	}
+	
+	public String trasferIterationFac(String input)
+	{
+		String iterationInfo = "";
+		
+		mathTimer.resetTimer();
+		mathTimer.startTimer();
+		
+		if(isValid(input))
+		{
+			iterationInfo += mathTool.calculateFibonacci(Integer.parseInt(input));
+		}
+		
+		mathTimer.stoptimer();
+		iterationInfo += "\n" + mathTimer;
+		
+		
+		return iterationInfo;
 	}
 	
 	private boolean isValid(String testValue)

@@ -24,6 +24,7 @@ public class CountingPanel extends JPanel
 	private JButton fibButton;
 	private JButton factButton;
 	private JTextArea textArea;
+	private JButton iterFacButton;
 	
 	
 	
@@ -39,6 +40,8 @@ public class CountingPanel extends JPanel
 		this.factButton = new JButton("Fact");
 		this.textField = new JTextField(35);
 		this.textArea = new JTextArea(20, 40);
+		this.iterFacButton = new JButton("Iteration");
+		
 		
 		setupListeners();
 		setupPanel();
@@ -63,11 +66,19 @@ public class CountingPanel extends JPanel
 				textArea.setText(baseController.transferFibonacci(textField.getText()));
 			}
 		});
+		iterFacButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				textArea.setText(baseController.transferFactorial(textField.getText()));
+			}
+		});
 	}
 	
 	private void setupPanel()
 	{
 		this.add(fibButton);
+		this.add(iterFacButton);
 		this.setLayout(baseLayout);
 		this.setPreferredSize(new Dimension(500, 500));
 		this.add(factButton);
@@ -89,6 +100,8 @@ public class CountingPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.EAST, textField, -22, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, textArea, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, textArea, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, iterFacButton, 0, SpringLayout.NORTH, fibButton);
+		baseLayout.putConstraint(SpringLayout.WEST, iterFacButton, 102, SpringLayout.EAST, factButton);
 	}
 
 
