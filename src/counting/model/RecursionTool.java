@@ -26,7 +26,7 @@ public class RecursionTool
 		}
 	}
 	
-	public int calculateIterationFac(int currentNumber)
+	public int calculateIterationFib(int currentNumber)
 	{
 		int x = 0, y = 1, z = 1;
 		for (int i = 0; i < currentNumber; i++)
@@ -38,4 +38,13 @@ public class RecursionTool
 		return x;
 	}
 	
+	int calculateIterationFac(int input)
+	{
+	  int x, fact = 1;
+	  for ( x = input; x > 1; x--)
+	     fact *= x;
+	     
+	  return fact;
+
+	}
 }

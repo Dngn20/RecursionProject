@@ -61,7 +61,7 @@ public class CountingController
 		return fibanocciInfo;
 	}
 	
-	public String trasferIterationFac(String input)
+	public String trasferIterationFib(String input)
 	{
 		String iterationInfo = "";
 		
